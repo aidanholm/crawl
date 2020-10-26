@@ -84,7 +84,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 0 # all history
           submodules: true
       - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
       - name: Set up Python 3.7
@@ -158,8 +157,6 @@ jobs:
             build_opts: TILES=y
     steps:
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0 # all history
       - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
       - name: Checkout submodules
         shell: bash
@@ -208,8 +205,6 @@ jobs:
           - installer
     steps:
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0 # all history
       - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
       - name: Checkout submodules (for crosscompile)
         shell: bash
@@ -278,8 +273,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0 # all history
       - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
       - name: Set up Python 3.7
         uses: actions/setup-python@v1
@@ -377,8 +370,6 @@ jobs:
           - FULLDEBUG=1
     steps:
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0 # all history
       - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
       - name: Set up Python 3.7
         uses: actions/setup-python@v1
