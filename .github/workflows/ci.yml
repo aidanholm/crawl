@@ -111,7 +111,7 @@ jobs:
             ccache-linux-${{ matrix.compiler }}-${{ matrix.tag_upgrade }}-
             ccache-linux-${{ matrix.compiler }}-
       - name: Setup ccache
-        uses: alexjurkiewicz/setup-ccache@master
+        run: "echo /usr/bin/ccache >> $GITHUB_PATH"
       - name: "Setup ccache: prepend path"
         run: "echo /usr/lib/ccache >> $GITHUB_PATH"
       - name: "Setup ccache: update symlinks"
@@ -179,7 +179,7 @@ jobs:
             ccache-macos-clang-${{ matrix.build_type }}-
             ccache-macos-clang-
       - name: Setup ccache
-        uses: alexjurkiewicz/setup-ccache@master
+        run: "echo /usr/bin/ccache >> $GITHUB_PATH"
       - name: "Setup ccache: prepend path"
         run: "echo $(brew --prefix)/opt/ccache/libexec >> $GITHUB_PATH"
       - name: "Setup ccache: clear stats"
@@ -238,7 +238,7 @@ jobs:
             ccache-mingw64-${{ matrix.build_type }}-
             ccache-mingw64-
       - name: Setup ccache
-        uses: alexjurkiewicz/setup-ccache@master
+        run: "echo /usr/bin/ccache >> $GITHUB_PATH"
       - name: "Setup ccache: prepend path"
         run: "echo /usr/lib/ccache >> $GITHUB_PATH"
       - name: "Setup ccache: update symlinks"
@@ -301,7 +301,7 @@ jobs:
           restore-keys: |
             ccache-catch2-
       - name: Setup ccache
-        uses: alexjurkiewicz/setup-ccache@master
+        run: "echo /usr/bin/ccache >> $GITHUB_PATH"
       - name: "Setup ccache: prepend path"
         run: "echo /usr/lib/ccache >> $GITHUB_PATH"
       - name: "Setup ccache: update symlinks"
@@ -403,7 +403,7 @@ jobs:
             ccache-build-headers-${{ matrix.compiler }}-
             ccache-build-headers-
       - name: Setup ccache
-        uses: alexjurkiewicz/setup-ccache@master
+        run: "echo /usr/bin/ccache >> $GITHUB_PATH"
       - name: "Setup ccache: prepend path"
         run: "echo /usr/lib/ccache >> $GITHUB_PATH"
       - name: "Setup ccache: update symlinks"
